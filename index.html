@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Travel Enthusiast</title>
+    <title>Your Name | Travel Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-content">
-            <a href="#home" class="logo">YourName</a>
+        <div class="nav-container">
+            <a href="#home" class="logo">🌍 TravelDiary</a>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#articles">Articles</a>
+                <a href="#map">Travel Map</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -24,44 +25,103 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Travel Stories & Adventures</h1>
-            <p>Exploring the world one destination at a time</p>
+            <h1>Adventure Awaits</h1>
+            <p>Exploring hidden gems across India</p>
         </div>
     </section>
 
-    <section id="articles" class="articles-section">
-    <div class="section-heading">
-        <h2>Featured Travel Articles</h2>
-    </div>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-heading">
+            <h2>About Me</h2>
+        </div>
+        <div class="photo-grid">
+            <img src="images/photo1.jpg" alt="Me in mountains">
+            <img src="images/photo2.jpg" alt="Me at beach">
+            <img src="images/photo3.jpg" alt="Me with camera">
+        </div>
+    </section>
 
-    <div class="articles-grid">
-        <!-- Article 1 -->
-        <article class="article-card">
-            <img src="images/himalayas.jpg" alt="Himalayas">
-            <div class="article-content">
-                <h3>Himalayan Trekking Adventure</h3>
-                <div class="article-meta">
-                    <span><i class="fas fa-calendar-alt"></i> March 2024</span>
-                    <span><i class="fas fa-clock"></i> 5 min read</span>
+    <!-- Travel Articles -->
+    <section id="articles" class="section">
+        <div class="section-heading">
+            <h2>Featured Stories</h2>
+        </div>
+        
+        <div class="articles-container">
+            <!-- Article 1 -->
+            <article class="article-card">
+                <img src="images/himalayas.jpg" alt="Himalayas">
+                <div class="article-content">
+                    <h3>Himalayan Trekking Journey</h3>
+                    <div class="meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Himachal Pradesh</span>
+                        <span><i class="fas fa-clock"></i> 6 min read</span>
+                    </div>
+                    <p>Discovering remote villages and snow-capped peaks...</p>
+                    <a href="articles/himalayas.html" class="btn">Read More →</a>
                 </div>
-                <p>My journey through the breathtaking trails of the Himalayas...</p>
-                <a href="articles/himalayas.html" class="read-more">Read More →</a>
-            </div>
-        </article>
+            </article>
 
-        <!-- Article 2 -->
-        <article class="article-card">
-            <img src="images/kerala.jpg" alt="Kerala">
-            <div class="article-content">
-                <h3>Backwaters of Kerala</h3>
-                <div class="article-meta">
-                    <span><i class="fas fa-calendar-alt"></i> January 2024</span>
-                    <span><i class="fas fa-clock"></i> 4 min read</span>
+            <!-- Article 2 -->
+            <article class="article-card">
+                <img src="images/kerala.jpg" alt="Kerala">
+                <div class="article-content">
+                    <h3>Kerala Backwaters Serenity</h3>
+                    <div class="meta">
+                        <span><i class="fas fa-map-marker-alt"></i> Alleppey</span>
+                        <span><i class="fas fa-clock"></i> 5 min read</span>
+                    </div>
+                    <p>A peaceful journey through palm-fringed canals...</p>
+                    <a href="articles/kerala.html" class="btn">Read More →</a>
                 </div>
-                <p>Discovering the serene beauty of Kerala's famous backwaters...</p>
-                <a href="articles/kerala.html" class="read-more">Read More →</a>
-            </div>
-        </article>
+            </article>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section id="map" class="section">
+        <div class="section-heading">
+            <h2>Travel Map</h2>
+        </div>
+        <iframe src="india_tourism_map.html" class="map-iframe"></iframe>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-heading">
+            <h2>Let's Connect</h2>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:you@email.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
     </div>
 </section>
 </body>
